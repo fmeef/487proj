@@ -1,16 +1,44 @@
-<html>
-	<head>
-		<title>Login</title>
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <!-- <link rel="stylesheet" href="https://basehold.it/26"> -->
+</head>
 
-	<body>
-		<h1>Login to ICRAT system</h1>
-		<form action="{{formpath}}" method="post">
-			<input type="text" id="username" name="user_name">
-			<input type="password" id="password" name="pass_word">
-			<button type="submit">
-				Login
-			</button>
-		</form>
-	</body>
+<body>
+  <!-- TODO: Set up log in form -->
+  <form id="login-form">
+    <section id="login-info">
+      <h1>Study Group Finder</h1>
+      <p>
+        <label for="usertype">
+          <p>Login as: </p>
+        </label>
+        <select id="usertype" name="usertype">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="admin">Admin</option>
+        </select>
+      </p>
+      <p>
+        <label for="username">
+          <p>Username</p>
+        </label>
+        <input type="text" id="username" name="username" />
+      </p>
+      <p>
+        <label for="password">
+          <p>Password</p>
+        </label>
+        <input type="text" id="password" name="password" />
+      </p>
+      <p><button type="login">Login</button></p>
+    </section>
+  </form>
+
+</body>
+
 </html>

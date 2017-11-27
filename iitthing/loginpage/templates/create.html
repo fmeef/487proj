@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Create New Session Post</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <!-- <link rel="stylesheet" href="https://basehold.it/26"> -->
+</head>
+
+<body>
+  <nav id="navigation">
+    <ul>
+      <li><a href="#dummy">Home</a></li>
+      <li><a href="#dummy">Sessions</a></li>
+      <li><a href="#dummy">Map</a></li>
+      <li><a href="#dummy">Logout</a></li>
+    </ul>
+  </nav>
+  <!-- TODO: Set up form with the following fields:
+    Topic, Time (DD), Date (DD), Course Subject (DD), Course number (DD),
+    Building (DD), Room (DD) -->
+  <form id="create">
+    <h1>Create New Session Post</h1>
+    <ul>
+      <li>
+        <p>Topic</p>
+        <input type="text" maxlength="32" id="topic" name="topic" />
+      </li>
+      <li>
+        <p>Time</p>
+        <select id="time-h" name="time-h">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <select id="time-m" name="time-m">
+          <option>00</option>
+          <option>05</option>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+          <option>30</option>
+          <option>35</option>
+          <option>40</option>
+          <option>45</option>
+          <option>50</option>
+          <option>55</option>
+        </select>
+        <select id="time-ap" name="time-ap">
+          <option>am</option>
+          <option>pm</option>
+        </select>
+      </li>
+      <li>
+        <p>Date</p>
+        <select id="date-m" name="date-m">
+          <option>Jan</option>
+          <option>Feb</option>
+          <option>Mar</option>
+          <option>Apr</option>
+          <option>May</option>
+          <option>Jun</option>
+          <option>Jul</option>
+          <option>Aug</option>
+          <option>Sep</option>
+          <option>Oct</option>
+          <option>Nov</option>
+          <option>Dec</option>
+        </select>
+        <select id="date-d" name="date-d">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+        </select>
+        <select id="date-y" name="date-y">
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+        </select>
+      </li>
+      <li>
+        <p>Course</p>
+        <select id="course-sub" name="course-sub">
+          <option>ARCH</option>
+          <option>BIO</option>
+          <option>CHEM</option>
+          <option>COM</option>
+          <option>CS</option>
+          <option>ENG</option>
+          <option>HIST</option>
+          <option>ITM</option>
+          <option>MATH</option>
+          <option>PHYS</option>
+          <option>PSYC</option>
+        </select>
+        <select id="course-num" name="course-num">
+          <option>100</option>
+          <option>115</option>
+          <option>116</option>
+          <option>200</option>
+          <option>201</option>
+          <option>300</option>
+          <option>350</option>
+          <option>351</option>
+          <option>400</option>
+          <option>487</option>
+        </select>
+      </li>
+      <li>
+        <p>Location</p>
+        <select id="building" name="building">
+          <option>AM</option>
+          <option>CR</option>
+          <option>GL</option>
+          <option>HH</option>
+          <option>LS</option>
+          <option>MC</option>
+          <option>PH</option>
+          <option>SB</option>
+          <option>WH</option>
+        </select>
+        <input type="text" maxlength="16" id="room" name="room" />
+      </li>
+    </ul>
+    <button type="create">Create</button>
+  </form>
+
+</body>
+
+</html>

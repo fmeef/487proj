@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sessions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <!-- <link rel="stylesheet" href="https://basehold.it/26"> -->
+</head>
+
+<body>
+  <nav id="navigation">
+    <ul>
+      <li><a href="#dummy">Home</a></li>
+      <li><a href="#dummy">Sessions</a></li>
+      <li><a href="#dummy">Map</a></li>
+      <li><a href="#dummy">Logout</a></li>
+    </ul>
+  </nav>
+  <h1>List of Sessions</h1>
+  <!-- TODO: Add Filters -->
+  <aside id="filters">
+    <h3>Sort by:</h3>
+    <form>
+      <fieldset id="filter-form">
+        <ul>
+          <li>
+            <input type="radio" checked id="id" name="filter" value="id" />
+            <label for="id">ID</label>
+          </li>
+          <li>
+            <input type="radio" id="topic" name="filter" value="topic" />
+            <label for="topic">Topic</label>
+          </li>
+          <li>
+            <input type="radio" id="date" name="filter" value="date" />
+            <label for="date">Date</label>
+          </li>
+          <li>
+            <input type="radio" id="subject" name="filter" value="subject" />
+            <label for="subject">Subject</label>
+            <select multiple id="selected_subjects" name="selected_subjects">
+              <option>ARCH</option>
+              <option>BIO</option>
+              <option>CHEM</option>
+              <option>COM</option>
+              <option>CS</option>
+              <option>ENG</option>
+              <option>ITM</option>
+              <option>MATH</option>
+              <option>PHYS</option>
+              <option>PSYC</option>
+            </select>
+          </li>
+        </ul>
+      </fieldset>
+      <p><button type="submit">Submit Filter(s)</button></p>
+    </form>
+  </aside>
+  <!-- TODO: Display table of all study posts -->
+  <main id="table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Topic</th>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Study for Finals</td>
+          <td>CS 487</td>
+          <td>12/3/17</td>
+          <td>3:00pm</td>
+          <td>RE Lobby</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Study for Finals</td>
+          <td>CS 487</td>
+          <td>12/2/17</td>
+          <td>5:00pm</td>
+          <td>SB E Lobby</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Homework 5</td>
+          <td>CS 487</td>
+          <td>11/30/17</td>
+          <td>10:00am</td>
+          <td>SB 116</td>
+        </tr>
+        <tr>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+
+</html>
