@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from loginpage import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-  #  url(r'^&', views.index, name='login_index'),
+    url(r'^$', views.login , name='login_index'),
+    url(r'^userhome/$', views.homescreen, name='home_screen'),
+    url(r'^catalog/$', views.studypostcatalog, name='catalog_screen'),
+    url(r'^newsession/$', views.createnewsession, name='create_session'),
+    url(r'^viewsession/$', views.viewsessionpost, name='view_session'),
+    url(r'^map/$', views.mapscreen, name='map'),
 ]
