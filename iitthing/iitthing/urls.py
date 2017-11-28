@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from loginpage import views
+from django.contrib.auth import views as auth_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.login , name='login_index'),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^userhome/$', views.homescreen, name='home_screen'),
     url(r'^catalog/$', views.studypostcatalog, name='catalog_screen'),
     url(r'^newsession/$', views.createnewsession, name='create_session'),
