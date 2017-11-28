@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^userhome/$', views.homescreen, name='home_screen'),
     url(r'^catalog/$', views.studypostcatalog, name='catalog_screen'),
     url(r'^newsession/$', views.createnewsession, name='create_session'),
-    url(r'^viewsession/$', views.viewsessionpost, name='view_session'),
+    url(r'^accounts/profile/$', views.viewsessionpost, name='view_session'),
     url(r'^map/$', views.mapscreen, name='map'),
 ]
