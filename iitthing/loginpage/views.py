@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+
 
 # Create your views here.
 
 def login(request):
-    return HttpResponse("Login screen")
+    template = loader.get_template('login.html')
+    
+    return HttpResponse(template.render( template))
 
 def homescreen(request):
     return HttpResponse("Home screen")
