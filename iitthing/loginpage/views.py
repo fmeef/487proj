@@ -22,7 +22,8 @@ def createnewsession(request):
 
 def viewsessionpost(request):
     if request.user.is_authenticated():
-        return HttpResponse("Authorized")
+        sessionsview = loader.get_template('sessions.html')
+        return HttpResponse(sessionsview.render(request))
     else:
         return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
 
