@@ -25,9 +25,13 @@ def homeredirect(request):
     else:
         return HttpResponse("UNAUTHORIZED ACCESS, DISPATCHING GOONS")
 
-def viewsessionpost(request):
+def viewsessionpost(request, filter_opt, subject_opt):
     if request.user.is_authenticated():
         sessionsview = loader.get_template('sessions.html')
+        
+        print filter_opt
+        print subject_opt
+
         return HttpResponse(sessionsview.render(request))
     else:
         return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
