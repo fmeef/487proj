@@ -33,6 +33,12 @@ def viewsessionpost(request, query):
     if request.user.is_authenticated():
         sessionsview = loader.get_template('sessions.html')
         print query
+        if request.method == 'POST':
+            radiobutton = request.POST['filter']
+            subject = request.POST['selected_subjects']
+
+            print "selected sort by ", radiobutton, " subject ", subject
+
         if(query != None):
             return redirect("/viewsessionpost")
         return render_to_response('sessions.html', RequestContext(request))

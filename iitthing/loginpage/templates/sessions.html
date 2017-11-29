@@ -30,21 +30,21 @@
       <fieldset id="filter-form">
         <ul>
           <li>
-		  <input type="radio" checked id="id" name="filter" value="{{ id }}" />
+		  <input type="radio" checked id="id" name="filter" value="id" />
             <label for="id">ID</label>
           </li>
           <li>
-		  <input type="radio" id="topic" name="filter" value="{{ topic }} "/>
+		  <input type="radio" id="topic" name="filter" value="topic"/>
             <label for="topic">Topic</label>
           </li>
           <li>
-		  <input type="radio" id="date" name="filter" value="{{ date }}" />
+		  <input type="radio" id="date" name="filter" value="date" />
             <label for="date">Date</label>
           </li>
           <li>
-		  <input type="radio" id="subject" name="filter" value=" {{ subject }}" />
+		  <input type="radio" id="subject" name="filter" value="subject" />
             <label for="subject">Subject</label>
-	    <select multiple id="selected_subjects" name="selected_subjects" value="{{ subjectlist  }}">
+	    <select multiple id="selected_subjects" name="selected_subjects" value="{{ subjectlist }}">
               <option>ARCH</option>
               <option>BIO</option>
               <option>CHEM</option>
