@@ -45,6 +45,9 @@ def viewsessionpost(request, query):
         return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
 
 def mapscreen(request):
-    return HttpResponse("View session post screen")
+    if request.user.is_authenticated():
+        return render_to_response('map.html', RequestContext(request))
+    else:
+        return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
 
 

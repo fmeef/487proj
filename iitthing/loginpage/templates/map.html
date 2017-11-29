@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Map</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
-  <link rel="stylesheet" href="css/screen.css" />
+  <link rel="stylesheet" type="text/css"  href="{% static 'screen.css' %}" />
   <!-- <link rel="stylesheet" href="https://basehold.it/26"> -->
 </head>
 
@@ -12,9 +14,9 @@
   <nav id="navigation">
     <ul>
       <li><a href="#dummy">Home</a></li>
-      <li><a href="#dummy">Sessions</a></li>
+      <li><a href="/viewsessionpost">Sessions</a></li>
       <li><a href="#dummy">Map</a></li>
-      <li><a href="#dummy">Logout</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </nav>
   <!-- TODO: Put a lovely map of the IIT main campus here -->
