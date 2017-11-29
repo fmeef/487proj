@@ -56,7 +56,7 @@ ROOT_URLCONF = 'iitthing.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['loginpage/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

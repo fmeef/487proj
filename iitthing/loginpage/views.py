@@ -4,6 +4,9 @@ from django.template import loader
 from django.shortcuts import redirect
 from django.contrib.auth import models as auth_models 
 from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
+from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render_to_response
 
 # Create your views here.
 
@@ -25,14 +28,14 @@ def homeredirect(request):
     else:
         return HttpResponse("UNAUTHORIZED ACCESS, DISPATCHING GOONS")
 
-def viewsessionpost(request, filter_opt, subject_opt):
+@csrf_protect
+def viewsessionpost(request, query):
     if request.user.is_authenticated():
         sessionsview = loader.get_template('sessions.html')
-        
-        print filter_opt
-        print subject_opt
-
-        return HttpResponse(sessionsview.render(request))
+        print query
+        if(query != None):
+            return redirect("/viewsessionpost")
+        return render_to_response('sessions.html', RequestContext(request))
     else:
         return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
 
