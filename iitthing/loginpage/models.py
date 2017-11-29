@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth import models as auth_models
 
 # Create your models here.
 class Room(models.Model):
@@ -20,6 +21,7 @@ class Session(models.Model):
     topic = models.CharField(max_length=255)
     roomid = models.ForeignKey(Room, on_delete=models.CASCADE)
     courseid = models.ForeignKey(Course, on_delete=models.CASCADE)
+
  
 class User(models.Model):
     name = models.CharField(unique=True, max_length=255)
@@ -27,5 +29,5 @@ class User(models.Model):
     online = models.BooleanField()
     sessionid = models.ForeignKey(Session, on_delete=models.CASCADE)
     usertype = models.CharField(max_length=255)
-
+    authsession = models.ForeignKey(auth_models.User, on_delete=models.CASCADE)
   
