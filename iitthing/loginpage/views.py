@@ -19,6 +19,11 @@ def studypostcatalog(request):
 def createnewsession(request):
     return HttpResponse("Create new session screen")
 
+def homeredirect(request):
+    if request.user.is_authenticated():
+        return redirect('/viewsessionpost')
+    else:
+        return HttpResponse("UNAUTHORIZED ACCESS, DISPATCHING GOONS")
 
 def viewsessionpost(request):
     if request.user.is_authenticated():
