@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
-
+import models
 # Create your views here.
 
 def login(request):
@@ -36,7 +36,6 @@ def viewsessionpost(request, query):
         if request.method == 'POST':
             radiobutton = request.POST['filter']
             subject = request.POST['selected_subjects']
-
             print "selected sort by ", radiobutton, " subject ", subject
 
         if(query != None):
