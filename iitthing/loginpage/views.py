@@ -45,8 +45,10 @@ def viewsessionpost(request):
             subject = request.POST['selected_subjects']
             print "selected sort by ", radiobutton, " subject ", subject
             try:
-                res = models.Course.objects.get(coursesubject=subject)
-                newcontext["course_list"] = ["found"]
+                res = models.Course.objects.filter(coursesubject=subject)
+
+                newcontext["course_list"] = res 
+                
                 print "found ", res
             except:
                 print "query ", subject, " failed. Not found" 
