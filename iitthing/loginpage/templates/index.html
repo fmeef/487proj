@@ -42,13 +42,13 @@
         </tr>
       </thead>
       <tbody>
-{% for section in section_list %}
+{% for session in session_list %}
         <tr>
-		<td> {{ section.topic }}</td>
-		<td> {{ section.courseid.coursename }} </td>
-		<td> {{ section.sessiondate }}</td>
-		<td> {{ section.sessiontime }}</td>
-          	<td> {{ section.roomid }} </td>
+		<td> {{ session.topic }}</td>
+		<td> {{ session.courseid.coursename }} </td>
+		<td> {{ session.sessiondate }}</td>
+		<td> {{ session.sessiontime }}</td>
+          	<td> {{ session.roomid }} </td>
         </tr>
 {% endfor %}
       </tbody>
