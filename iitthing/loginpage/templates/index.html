@@ -24,22 +24,7 @@
   <h1>Study Group Finder</h1>
   <!-- TODO: Button to "Create new study post" -->
   <p>
-  <form action="/userhome" method="post">
-    {% csrf_token %}
-    <label for="coursename">Course name</label>
-    <input type="text" name="coursename">
-
-    <label for="coursesubject">Course subject</label>
-    <input type="text" name="coursesubject">
-
-    <label for="coursenum">Course number</label>
-    <input type="text" name="coursenum">
-
-    <label for="sectionnum">Section number</label>
-    <input type="text" name="sectionnum">
-
-    <button type="submit">Create new course</button>
-  </form>
+    <button type="create">Create New Study Session</button>
   </p>
 
   <article id="table">
