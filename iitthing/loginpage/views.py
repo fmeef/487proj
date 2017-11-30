@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm 
-
+from django.template import Context
 
 import models
 # Create your views here.
@@ -37,8 +37,10 @@ def login(request):
     return redirect('/login')
 
 def homescreen(request):
+    ctx = RequestContext(request)
+    ctx['foo'] = 'bar'
     if request.user.is_authenticated():
-        return render_to_response('index.html', RequestContext(request))
+        return render_to_response('index.html', ctx)
     else:
         return HttpResponse(unauthorizedmsg)
 
@@ -61,6 +63,7 @@ def viewsessionpost(request):
         sessionsview = loader.get_template('sessions.html')
 
         newcontext = RequestContext(request)
+        newcontext['foo'] = 'bar' 
         if request.method == 'POST':
             radiobutton = request.POST['filter']
             try:
@@ -84,7 +87,9 @@ def viewsessionpost(request):
 
 def mapscreen(request):
     if request.user.is_authenticated():
-        return render_to_response('map.html', RequestContext(request))
+        ctx = RequestContext(request)
+        ctx['foo'] = 'bar' 
+        return render_to_response('map.html', ctx)
     else:
         return HttpResponse(unauthorizedmsg)
 
