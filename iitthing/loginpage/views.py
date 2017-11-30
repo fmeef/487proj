@@ -26,7 +26,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username= username, password=raw_password)
             login(user)
-            return redirect('/userhome')
+            return redirect('/')
         else:
             return HttpResponse("Form not valid. Does the user exist? Is the password complex enough? ")
     else:
