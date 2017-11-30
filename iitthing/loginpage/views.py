@@ -39,15 +39,23 @@ def viewsessionpost(request, query):
     if request.user.is_authenticated():
         sessionsview = loader.get_template('sessions.html')
         print query
+
+        newcontext = RequestContext(request)
         if request.method == 'POST':
             radiobutton = request.POST['filter']
             subject = request.POST['selected_subjects']
             print "selected sort by ", radiobutton, " subject ", subject
-            res = models.Course.objects.get(coursesubject=subject)
-            print "found ", res
+            try:
+                res = models.Course.objects.get(coursesubject=subject)
+                newcontext["course_list"] = ["found"]
+                print "found ", res
+            except:
+                print "query ", subject, " failed. Not found" 
+                newcontext["course_list"] = ["not found"]
+
         if(query != None):
             return redirect("/viewsessionpost")
-        return render_to_response('sessions.html', RequestContext(request))
+        return render_to_response('sessions.html', newcontext)
     else:
         return HttpResponse(unauthorizedmsg)
 
