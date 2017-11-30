@@ -38,7 +38,7 @@ def login(request):
 
 def homescreen(request):
     if request.user.is_authenticated():
-        return render(request,'index.html' ,RequestContext(request))
+        return render(request,'index.html' ,{})
     else:
         return HttpResponse(unauthorizedmsg)
 
@@ -60,7 +60,7 @@ def viewsessionpost(request):
     if request.user.is_authenticated():
         sessionsview = loader.get_template('sessions.html')
 
-        newcontext = RequestContext(request)
+        newcontext = {}
         if request.method == 'POST':
             radiobutton = request.POST['filter']
             try:
@@ -84,7 +84,7 @@ def viewsessionpost(request):
 
 def mapscreen(request):
     if request.user.is_authenticated():
-        return render(request, 'map.html',RequestContext(request))
+        return render(request, 'map.html',{})
     else:
         return HttpResponse(unauthorizedmsg)
 
