@@ -28,7 +28,7 @@ def signup(request):
             login(user)
             return redirect('/userhome')
         else:
-            return HttpResponse("User already exists")
+            return HttpResponse("Form not valid. Does the user exist? Is the password complex enough? ")
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form':form})
