@@ -64,10 +64,25 @@
   </aside>
   <!-- TODO: Display table of all study posts -->
   <main id="table">
-
+	<h2>Course Results</h2>
+	<table>
+	<thead>
+		<tr>
+			<th>Course Name</th>
+		</tr>
+	</thead>
+	<tbody>
   {% for course in course_list %}
- 	{{ course.coursename }}
+  	<tr>
+		<td>
+ 		{{ course.coursename }}
+		</td>
+	</tr>
+
 {% endfor %}
+
+	</tbody>
+	</table>
   </main>
 </body>
 
