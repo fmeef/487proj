@@ -43,7 +43,8 @@ def viewsessionpost(request, query):
             radiobutton = request.POST['filter']
             subject = request.POST['selected_subjects']
             print "selected sort by ", radiobutton, " subject ", subject
-
+            res = models.Course.objects.get(coursesubject=subject)
+            print "found ", res
         if(query != None):
             return redirect("/viewsessionpost")
         return render_to_response('sessions.html', RequestContext(request))
