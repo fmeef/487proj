@@ -68,12 +68,16 @@
 	<table>
 	<thead>
 		<tr>
+			<th>Course Num</th>
 			<th>Course Name</th>
 		</tr>
 	</thead>
 	<tbody>
   {% for course in course_list %}
   	<tr>
+		<td>
+			{{ course.coursenum }}
+		</td>
 		<td>
  		{{ course.coursename }}
 		</td>
