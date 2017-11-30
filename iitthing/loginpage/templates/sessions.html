@@ -68,18 +68,26 @@
 	<table>
 	<thead>
 		<tr>
+			<th>Subject</th>
 			<th>Course Num</th>
 			<th>Course Name</th>
+			<th>Section</th>
 		</tr>
 	</thead>
 	<tbody>
   {% for course in course_list %}
   	<tr>
 		<td>
+			{{ course.coursesubject }}
+		</td>
+		<td>
 			{{ course.coursenum }}
 		</td>
 		<td>
  		{{ course.coursename }}
+		</td>
+		<td>
+			{{ course.sectionnum }}
 		</td>
 	</tr>
 
