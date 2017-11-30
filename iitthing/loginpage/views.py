@@ -71,6 +71,8 @@ def homeredirect(request):
     else:
         return HttpResponse(unauthorizedmsg)
 
+
+
 @csrf_protect
 def viewsessionpost(request):
     if request.user.is_authenticated():
@@ -85,7 +87,7 @@ def viewsessionpost(request):
             except:
                 return HttpResponse("Please select a subject next time")
             try:
-                res = models.Course.objects.filter(coursesubject=subject)
+                res = models.Course.objects.filter(coursesubject=subject).order_by(radiobutton)
 
                 newcontext["course_list"] = res 
                 
