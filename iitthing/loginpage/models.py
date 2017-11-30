@@ -19,8 +19,8 @@ class Course(models.Model):
 class Session(models.Model):
     sessionid = models.IntegerField(unique=True)
     topic = models.CharField(max_length=255)
-    roomid = models.ForeignKey(Room, on_delete=models.CASCADE)
-    courseid = models.ForeignKey(Course, on_delete=models.CASCADE)
+#    roomid = models.ForeignKey(Room, on_delete=models.CASCADE)
+ #   courseid = models.ForeignKey(Course, on_delete=models.CASCADE)
 
  
 class User(models.Model):
@@ -29,5 +29,5 @@ class User(models.Model):
     online = models.BooleanField()
     sessionid = models.ForeignKey(Session, on_delete=models.CASCADE)
     usertype = models.CharField(max_length=255)
-    authsession = models.ForeignKey(auth_models.User, on_delete=models.CASCADE)
+    #authsession = models.ForeignKey(auth_models.User, on_delete=models.CASCADE)
   

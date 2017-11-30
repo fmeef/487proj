@@ -27,10 +27,20 @@
 
   <form action="/userhome/" method="POST">
 	  {% csrf_token %}
+	 <ol>
+		 <li>
+		<label for="id">ID</label>
+		  <input type="text" name="id">
+		 </li>
+		 <li>
+		  <label for="topic">Topic</label>
+		  <input type="text" name="topic">
+		 </li>
+		 <li>
 
-	  <input type="text" name="topic">
-	  <label for="topic">Topic</label>
     <button type="create">Create New Study Session</button>
+		 </li>
+	  </ol>
   </form>
   </p>
 

@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm 
-
+import traceback
 
 import models
 # Create your views here.
@@ -41,7 +41,19 @@ def homescreen(request):
         newcontext = {}
         if request.method == "POST":
             topic = request.POST["topic"]
-            print topic 
+            idnum = request.POST["id"]
+            print "session entered: ", idnum, " ", topic 
+            try:
+                s = models.Session(sessionid=int(idnum), topic=topic)
+                s.save()
+            except:
+                err = traceback.format_exc()
+                return HttpResponse("error with session input\n" + err)
+
+
+        
+        session_list = models.Session.objects.all()
+        newcontext["session_list"] =  session_list
         return render(request,'index.html' ,newcontext)
     else:
         return HttpResponse(unauthorizedmsg)
