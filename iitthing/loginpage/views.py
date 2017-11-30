@@ -77,6 +77,10 @@ def viewsessionpost(request):
             except:
                 print "query ", subject, " failed. Not found" 
                 newcontext["course_list"] = ["not found"]
+        else:
+            res = models.Course.objects.all()
+            newcontext["course_list"] = res
+
 
         return render(request, 'sessions.html',newcontext)
     else:
