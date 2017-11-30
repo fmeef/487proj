@@ -63,8 +63,11 @@ def viewsessionpost(request):
         newcontext = RequestContext(request)
         if request.method == 'POST':
             radiobutton = request.POST['filter']
-            subject = request.POST['selected_subjects']
-            print "selected sort by ", radiobutton, " subject ", subject
+            try:
+                subject = request.POST['selected_subjects']
+                print "selected sort by ", radiobutton, " subject ", subject
+            except:
+                return HttpResponse("Please select a subject next time")
             try:
                 res = models.Course.objects.filter(coursesubject=subject)
 
