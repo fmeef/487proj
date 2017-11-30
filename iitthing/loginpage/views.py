@@ -10,11 +10,17 @@ from django.shortcuts import render_to_response
 import models
 # Create your views here.
 
+unauthorizedmsg = "UNAUTHORIZED ACCESS. DISPATCHING GOONS."
+
 def login(request):
     return redirect('/login')
 
 def homescreen(request):
-    return HttpResponse("Home screen")
+    if request.user.is_authenticated():
+        return render_to_response('index.html', RequestContext(request))
+    else:
+        return HttpResponse(unauthorizedmsg)
+
 
 def studypostcatalog(request):
     return HttpResponse("Study post catalog")
@@ -24,9 +30,9 @@ def createnewsession(request):
 
 def homeredirect(request):
     if request.user.is_authenticated():
-        return redirect('/viewsessionpost')
+        return redirect('/userhome')
     else:
-        return HttpResponse("UNAUTHORIZED ACCESS, DISPATCHING GOONS")
+        return HttpResponse(unauthorizedmsg)
 
 @csrf_protect
 def viewsessionpost(request, query):
@@ -42,12 +48,12 @@ def viewsessionpost(request, query):
             return redirect("/viewsessionpost")
         return render_to_response('sessions.html', RequestContext(request))
     else:
-        return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
+        return HttpResponse(unauthorizedmsg)
 
 def mapscreen(request):
     if request.user.is_authenticated():
         return render_to_response('map.html', RequestContext(request))
     else:
-        return HttpResponse("UNAUTHORIZED ACCESS. DISPATCHING GOONS.")
+        return HttpResponse(unauthorizedmsg)
 
 
