@@ -38,7 +38,11 @@ def login(request):
 
 def homescreen(request):
     if request.user.is_authenticated():
-        return render(request,'index.html' ,{})
+        newcontext = {}
+        if request.method == "POST":
+            topic = request.POST["topic"]
+            print topic 
+        return render(request,'index.html' ,newcontext)
     else:
         return HttpResponse(unauthorizedmsg)
 

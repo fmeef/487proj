@@ -24,7 +24,14 @@
   <h1>Study Group Finder</h1>
   <!-- TODO: Button to "Create new study post" -->
   <p>
+
+  <form action="/userhome/" method="POST">
+	  {% csrf_token %}
+
+	  <input type="text" name="topic">
+	  <label for="topic">Topic</label>
     <button type="create">Create New Study Session</button>
+  </form>
   </p>
 
   <article id="table">
