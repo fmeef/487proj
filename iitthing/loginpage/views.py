@@ -38,7 +38,7 @@ def login(request):
 
 def homescreen(request):
     if request.user.is_authenticated():
-        return render_to_response('index.html',context_instance=RequestContext(request))
+        return render(request,'index.html' ,RequestContext(request))
     else:
         return HttpResponse(unauthorizedmsg)
 
@@ -78,13 +78,13 @@ def viewsessionpost(request):
                 print "query ", subject, " failed. Not found" 
                 newcontext["course_list"] = ["not found"]
 
-        return render_to_response('sessions.html', context_instance=newcontext)
+        return render(request, 'sessions.html',newcontext)
     else:
         return HttpResponse(unauthorizedmsg)
 
 def mapscreen(request):
     if request.user.is_authenticated():
-        return render_to_response('map.html',context_instance= RequestContext(request))
+        return render(request, 'map.html',RequestContext(request))
     else:
         return HttpResponse(unauthorizedmsg)
 
