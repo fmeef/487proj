@@ -42,30 +42,15 @@
         </tr>
       </thead>
       <tbody>
+{% for section in section_list %}
         <tr>
-          <td>1</td>
-          <td>Study for Finals</td>
-          <td>CS 487</td>
-          <td>12/3/17</td>
-          <td>3:00pm</td>
-          <td>RE Lobby</td>
+		<td> {{ section.topic }}</td>
+		<td> {{ section.courseid.coursename }} </td>
+		<td> {{ section.sessiondate }}</td>
+		<td> {{ section.sessiontime }}</td>
+          	<td> {{ section.roomid }} </td>
         </tr>
-        <tr>
-          <td>3</td>
-          <td>Homework 5</td>
-          <td>CS 487</td>
-          <td>11/30/17</td>
-          <td>10:00am</td>
-          <td>SB 116</td>
-        </tr>
-        <tr>
-          <td>...</td>
-          <td>...</td>
-          <td>...</td>
-          <td>...</td>
-          <td>...</td>
-          <td>...</td>
-        </tr>
+{% endfor %}
       </tbody>
     </table>
   </article>
