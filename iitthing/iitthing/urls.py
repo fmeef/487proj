@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from loginpage import views
 from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.login , name='login_index'),
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^viewsessionpost/$', views.viewsessionpost, name='view_session'),
     url(r'^accounts/profile/$', views.homeredirect, name='home_redirect'),
     url(r'^map/$', views.mapscreen, name='map'),
+    url(r'^signup/$', views.signup, name='signup'),
 ]

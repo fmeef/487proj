@@ -7,10 +7,31 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm 
+
+
 import models
 # Create your views here.
 
 unauthorizedmsg = "UNAUTHORIZED ACCESS. DISPATCHING GOONS."
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username= username, password=raw_password)
+            login(user)
+            return redirect('/userhome')
+        else:
+            return HttpResponse("User already exists")
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form':form})
 
 def login(request):
     return redirect('/login')
